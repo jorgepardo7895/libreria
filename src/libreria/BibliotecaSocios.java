@@ -5,18 +5,17 @@ import java.util.ArrayList;
 import utiles.Teclado;
 
 public class BibliotecaSocios {
-	ArrayList<Socio> socios;
-	Teclado ent;
+	
+	private Teclado ent;
 	
 	public BibliotecaSocios() {
 		ent=new Teclado();
-		socios=new ArrayList<Socio>();	
 	}
 	
-	public void meterSocio() {
+	public void meterSocio(ArrayList<Socio> socio) {
 		Socio nuevoSocio=new Socio();
-		if (socios.size()>0) {
-			nuevoSocio.setId(socios.get(socios.size()-1).getId()+1);
+		if (socio.size()>0) {
+			nuevoSocio.setId(socio.get(socio.size()-1).getId()+1);
 		} else {
 			nuevoSocio.setId(100);
 		}
@@ -27,59 +26,59 @@ public class BibliotecaSocios {
 		System.out.println("Inserta el e-mail: ");
 		nuevoSocio.setEmail(ent.deTodo());			
 		System.out.println(nuevoSocio.toString());
-		socios.add(nuevoSocio);
+		socio.add(nuevoSocio);
 	}	
 	
-	public void mostrarSocio() {
-		for (Socio socio : socios) {
-			System.out.println(socio.toString());
+	public void mostrarSocio(ArrayList<Socio> socio) {
+		for (Socio socios : socio) {
+			System.out.println(socios.toString());
 		}
 	}
 	
-	//METODOS PARA BUSCAR SOCIOS POR ATRIBUTOS
+	//METODOS PARA BUSCAR SOCIO POR ATRIBUTO
 	
-	public ArrayList<Socio> buscarSocioNombre(String nombre){
+	public ArrayList<Socio> buscarSocioNombre(ArrayList<Socio> socio,String nombre){
 		ArrayList<Socio> buscado=new ArrayList<Socio>();
-		for(Socio socio : socios) {
-			if(socio.getNombre().toLowerCase().contains(nombre.toLowerCase())) {
-				buscado.add(socio);
+		for(Socio socios : socio) {
+			if(socios.getNombre().toLowerCase().contains(nombre.toLowerCase())) {
+				buscado.add(socios);
 			}
 		}
 		return buscado;
 	}
 	
-	public ArrayList<Socio> buscarSocioTelefono(int tlfn){
+	public ArrayList<Socio> buscarSocioTelefono(ArrayList<Socio> socio,int tlfn){
 		ArrayList<Socio> buscado=new ArrayList<Socio>();
-		for(Socio socio : socios) {
-			if(socio.getTelefono()==tlfn) {
-				buscado.add(socio);
+		for(Socio socios : socio) {
+			if(socios.getTelefono()==tlfn) {
+				buscado.add(socios);
 			}
 		}
 		return buscado;
 	}
 	
-	public ArrayList<Socio> buscarSocioEmail(String email){
+	public ArrayList<Socio> buscarSocioEmail(ArrayList<Socio> socio,String email){
 		ArrayList<Socio> buscado=new ArrayList<Socio>();
-		for(Socio socio : socios) {
-			if(socio.getEmail().toLowerCase().contains(email.toLowerCase())) {
-				buscado.add(socio);
+		for(Socio socios : socio) {
+			if(socios.getEmail().toLowerCase().contains(email.toLowerCase())) {
+				buscado.add(socios);
 			}
 		}
 		return buscado;
 	}
 	
-	public Socio buscarSocioID(int id){
+	public Socio buscarSocioID(ArrayList<Socio> socio,int id){
 		Socio buscado=null;
-		for(Socio socio : socios) {
-			if(socio.getId()==id) {
-				buscado=socio;
+		for(Socio socios : socio) {
+			if(socios.getId()==id) {
+				buscado=socios;
 			}
 		}
 		return buscado;
 	}
 	
 	
-	//METODOS PARA MODIFICAR SOCIOS 
+	//METODOS PARA MODIFICAR SOCIO 
 	
 	public void modificarId(Socio socio) {
 		socio.setId(ent.enteros());
@@ -99,6 +98,12 @@ public class BibliotecaSocios {
 	public void modificarEmail(Socio socio) {
 		socio.setEmail(ent.deTodo());
 		System.out.println("Modificado con exito, el nuevo E-mail es: "+socio.getEmail());
+	}
+	
+	//METODO PARA ELIMINAR SOCIO
+	
+	public void eliminarSocio(ArrayList<Socio> socio,Socio soc) {
+		socio.remove(soc);
 	}
 	
 }
