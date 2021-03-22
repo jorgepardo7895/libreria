@@ -5,7 +5,7 @@ import java.io.*;
 public class ClaseFile {
 
 	public static void main(String[] args) {
-		File dir = new File("C:\\Users\\CEINMARK\\Desktop\\Jorge-DAM\\Programacion\\datos");
+		File dir = new File("C:\\Users\\jorge\\Desktop\\misClases\\pruebas");
 		
 		
 		try {
