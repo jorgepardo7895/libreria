@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class Excepciones {
 
 	public static void main(String[] args) {
-		Scanner ent=new Scanner(System.in);
-		
+		Scanner ent;
 		
 		try {
+			ent=new Scanner(System.in);
 			int num=ent.nextInt();
 			System.out.println(5/num);
 		}
@@ -19,5 +19,4 @@ public class Excepciones {
 			System.out.println("Error ");
 		}
 	}
-
 }
