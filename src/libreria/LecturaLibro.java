@@ -5,15 +5,15 @@ import java.util.ArrayList;
 
 public class LecturaLibro extends LecturaFicheros{
 	
-	public static void main(String args[]) {
+	public void main(String args[]) {
 		try {
 			leerLibro();
 		} catch (Exception e) {
-			e.getStackTrace();
+			e.getMessage();
 		}		
 	}
 	
-	public static ArrayList<Libro> leerLibro() throws Exception{
+	public ArrayList<Libro> leerLibro() throws Exception{
 		ArrayList<Libro>listaLibro=new ArrayList<Libro>();
 		File dir = new File(".\\datos\\libros.csv");
 		Libro libroLeido;
