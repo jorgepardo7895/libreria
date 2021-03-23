@@ -26,10 +26,11 @@ public class LecturaLibro extends LecturaFicheros{
 
 			array=a.split(";");
 			libroLeido=new Libro();
-			libroLeido.setTitulo(array[0]);
-			libroLeido.setAutor(array[1]);;
-			libroLeido.setEjemplares(Integer.parseInt(array[2]));
-			libroLeido.setPrecio(Float.parseFloat(array[3]));
+			libroLeido.setIsbn(Integer.parseInt(array[0]));
+			libroLeido.setTitulo(array[1]);
+			libroLeido.setAutor(array[2]);;
+			libroLeido.setEjemplares(Integer.parseInt(array[3]));
+			libroLeido.setPrecio(Float.parseFloat(array[4]));
 			listaLibro.add(libroLeido);
 		}
 		
