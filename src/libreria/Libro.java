@@ -13,7 +13,6 @@ public class Libro {
 		autor="";
 		ejemplares=0;
 		precio=0.0f;
-		
 	}
 	
 	public Libro(int isbn, String titulo,String autor,int ejemplares, float precio) {
@@ -25,7 +24,7 @@ public class Libro {
 	}
 	
 	public String toString(){
-		return "ISBN: "+ isbn+" Titulo: "+titulo+" Autor: "+autor+" Ejemplares: "+ejemplares+" Precio: "+ precio+" €";
+		return "ISBN: "+ isbn+"\t\t Titulo: "+titulo+"\t\t Autor: "+autor+"\t\t Ejemplares: "+ejemplares+"\t\t Precio: "+ precio+" €";
 	}
 	
 	public int getIsbn() {

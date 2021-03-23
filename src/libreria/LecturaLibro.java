@@ -2,7 +2,6 @@ package libreria;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class LecturaLibro extends LecturaFicheros{
 	
@@ -23,7 +22,6 @@ public class LecturaLibro extends LecturaFicheros{
 
 	
 		for (String a : dato) {
-
 			array=a.split(";");
 			libroLeido=new Libro();
 			libroLeido.setIsbn(Integer.parseInt(array[0]));
@@ -39,4 +37,6 @@ public class LecturaLibro extends LecturaFicheros{
 		}
 		return listaLibro;
 	}
+	// String format
+	
 }
