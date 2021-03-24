@@ -37,5 +37,4 @@ public class PruebaLecturaFicheros {
 			System.out.println("Estas trabajando con un archivo nulo");
 		}
 	}
-
 }

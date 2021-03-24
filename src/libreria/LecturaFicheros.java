@@ -12,7 +12,7 @@ public class LecturaFicheros {
 		br= new BufferedReader(new FileReader(fichero));
 						
 		while (br.ready()) {
-			datos.add(br.readLine());
+			datos.add(br.readLine().trim());
 		}
 		System.out.println("Archivo leido correctamente");
 		br.close();
