@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class LecturaLibro extends LecturaFicheros{
 	
-	public void main(String args[]) {
+	public static void main(String args[]) {
 		try {
 			leerLibro();
 		} catch (Exception e) {
@@ -13,7 +13,7 @@ public class LecturaLibro extends LecturaFicheros{
 		}		
 	}
 	
-	public ArrayList<Libro> leerLibro() throws Exception{
+	public static ArrayList<Libro> leerLibro() throws Exception{
 		ArrayList<Libro>listaLibro=new ArrayList<Libro>();
 		File dir = new File(".\\datos\\libros.csv");
 		Libro libroLeido;

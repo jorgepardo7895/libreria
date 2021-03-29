@@ -29,4 +29,24 @@ public class UnionDatos {
 		br.close();
 		bw.close();
 	}
+	
+//	public static void buscarYleer() {
+//		File arch = new File("./datos");
+//		
+//		for(File fich : arch.listFiles()) {
+//			if(fich.getName().toLowerCase().equals("libros.csv")) {
+//				leerLibro(fich);
+//			}if(fich.getName().toLowerCase().equals("socios.csv")) {
+//				leerSocio(fich);
+//			}
+//		}
+//	}
+//	
+//	public static void leerLibro(File libro) throws Exception{
+//		BufferedReader br=new BufferedReader(new FileReader(libro));
+//	}
+//	
+//	public static void leerSocio(File socio) {
+//		
+//	}
 }
