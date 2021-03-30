@@ -24,7 +24,11 @@ public class Libro {
 	}
 	
 	public String toString(){
-		return "ISBN: "+ isbn+"\t\t Titulo: "+titulo+"\t\t Autor: "+autor+"\t\t Ejemplares: "+ejemplares+"\t\t Precio: "+ precio+" €";
+		return "ISBN: "+ getIsbn()+"\t\t Titulo: "+getTitulo()+"\t\t Autor: "+getAutor()+"\t\t Ejemplares: "+getEjemplares()+"\t\t Precio: "+ getPrecio()+" €";
+	}
+	
+	public String toFichero() {
+		return getIsbn()+";"+getTitulo()+";"+getAutor()+";"+getEjemplares()+";"+getPrecio();
 	}
 	
 	public int getIsbn() {

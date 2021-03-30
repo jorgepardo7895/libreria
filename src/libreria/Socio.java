@@ -21,9 +21,13 @@ public class Socio {
 	}
 	
 	public String toString(){
-		return "Id de usuario: "+id+" Nombre: "+nombre+" Telefono: "+telefono+" E-mail: "+email;
+		return "Id de usuario: "+getId()+" Nombre: "+getNombre()+" Telefono: "+getTelefono()+" E-mail: "+getEmail();
 	}
 
+	public String toFichero() {
+		return getId()+";"+getNombre()+";"+getTelefono()+";"+getEmail();
+	}
+	
 	public int getId() {
 		return id;
 	}

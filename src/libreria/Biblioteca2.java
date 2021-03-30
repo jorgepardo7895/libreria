@@ -8,68 +8,34 @@ public class Biblioteca2 {
 	ArrayList<Socio> socios;
 	Teclado ent;
 	BibliotecaSocios users;
+	BibliotecaLibros libs;
 
 	public Biblioteca2() {
 		ent=new Teclado();
 		libros=new ArrayList<Libro>();
 		socios=new ArrayList<Socio>();	
 		users=new BibliotecaSocios();
+		libs=new BibliotecaLibros();
 	}
 
 	public void meterLibro() {
-		Libro libroNuevo= new Libro();
-		if (libros.size()>0) {
-			libroNuevo.setIsbn(libros.get(libros.size()-1).getIsbn()+1);
-		} else {
-			libroNuevo.setIsbn(100);
-		}
-		System.out.println("Introduzca el nombre del libro: ");
-		libroNuevo.setTitulo(ent.letras());
-		System.out.println("Introduce autor: ");
-		libroNuevo.setAutor(ent.letras());
-		System.out.println("Inserta el numero de ejemplares: ");
-		libroNuevo.setEjemplares(ent.enteros());
-		System.out.println("Inserta el precio: ");
-		libroNuevo.setPrecio(ent.decimales());
-		System.out.println(libroNuevo.toString());
-		libros.add(libroNuevo);
+		libs.meterLibro(libros);
 	}
 	
-	public void mostrarLibros() {
-		for (Libro libro : libros) {
-			System.out.println(libro.toString());
-		}
+	public void mostrarLibro() {
+		libs.mostrarLibro(libros);
 	}
 	
 	public void buscarLibro(){
-		System.out.println("Introduce el libro que quieres buscar");
-		String nombre=ent.letras();
-		int seleccion, indice;
-		for(Libro libro : libros) {
-			if(libro.getTitulo().equalsIgnoreCase(nombre)) {
-				do {
-					System.out.println("Libro encontrado, ¿que desea hacer?"+"\n"+"·1- Modificar datos"+"\n"+"·2- Borrar Libro"+"\n"+"·3- Consultar informacion"+"\n"+"·4- Salir");
-					seleccion=ent.enteros();
-					switch (seleccion) {
-					case 1:
-						indice= libros.indexOf(libro);
-						modificarLibro(indice);
-						break;
-					case 2:
-						System.out.println("Borrando...");
-						libros.remove(libros.indexOf(libro));
-						break;
-					case 3:
-						System.out.println("Los datos del libro son:"+"\n"+ libro.toString());
-						break;
-					case 4:
-						System.out.println("Saliendo...");
-						break;
-					default:
-						break;
-					}
-				}while(seleccion!=4);
-			}
+		Teclado sc = new Teclado();
+		System.out.println("Como quieres buscar: "+"\n"+"·1- ISBN"+"\n"+"·2- Titulo"+"\n"+"·3- Autor"+"\n"+"·6- Salir");
+		switch (sc.enteros()) {
+		case 1:
+			libs.buscarLibroIsbn(libros,sc.enteros());
+			break;
+
+		default:
+			break;
 		}
 	}
 	

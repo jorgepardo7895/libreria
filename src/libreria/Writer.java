@@ -5,12 +5,11 @@ import java.io.*;
 public class Writer {
 
 	public static void main(String[] args) {
-		FileWriter fw;
 		BufferedWriter bw;
 		
 		try {
-			fw = new FileWriter(".\\datos\\copiaseglibros.csv");
-			bw = new BufferedWriter(fw);
+			
+			bw = new BufferedWriter(new FileWriter(".\\datos\\copiaseglibros.csv"));
 			
 			bw.write("Hola mundo; maravilloso");
 			bw.newLine();

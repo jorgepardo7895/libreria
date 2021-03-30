@@ -11,9 +11,8 @@ public class ComparaFicheros {
 		String file1="",file2="";
 		
 		try {
-			LecturaFicheros lee=new LecturaFicheros();
-			ArrayList<String> fich1=new ArrayList<>(lee.leerFichero(new File(".\\datos\\prueba1.txt")));
-			ArrayList<String> fich2=new ArrayList<>(lee.leerFichero(new File(".\\datos\\prueba2.txt")));
+			ArrayList<String> fich1=new ArrayList<>(LecturaFicheros.leerFichero(new File(".\\datos\\prueba1.txt")));
+			ArrayList<String> fich2=new ArrayList<>(LecturaFicheros.leerFichero(new File(".\\datos\\prueba2.txt")));
 			
 			for (String a : fich1) {
 				file1+=a.toString();

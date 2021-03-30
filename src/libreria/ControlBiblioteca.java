@@ -19,7 +19,7 @@ public class ControlBiblioteca {
 				nuevaBiblioteca.users.meterSocio(nuevaBiblioteca.socios);
 				break;
 			case 3:
-				nuevaBiblioteca.mostrarLibros();
+				nuevaBiblioteca.mostrarLibro();
 				break;
 			case 4:
 				nuevaBiblioteca.users.mostrarSocio(nuevaBiblioteca.socios);
